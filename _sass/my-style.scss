@@ -1,14 +1,239 @@
-.dl-table {
-  a {
-    @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
-      text-underline-offset: .8rem;
-    }
-    @supports not ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
-      padding-bottom: .45rem;
-    }
+// 为sections添加间距
+section {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+  
+  &:last-child {
+    border-bottom: none;
   }
+}
 
-  .btn, .gumroad-button  {
-    margin: 1rem 0;
+// 项目展示样式
+.project {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 3px solid var(--accent-color);
+  background: #f9f9f9;
+  
+  h3 {
+    margin-top: 0;
+    color: var(--accent-color);
   }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// News列表样式
+#news ul {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+// Research section styling
+#research {
+  .publication {
+    display: flex;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+    
+    &:last-of-type {
+      border-bottom: none;
+    }
+    
+    .publication-teaser {
+      flex: 0 0 200px;
+      margin-right: 2rem;
+      
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+    }
+    
+    .publication-content {
+      flex: 1;
+      
+      h3 {
+        margin: 0 0 1rem 0;
+        color: var(--accent-color);
+        font-size: 1.3em;
+        line-height: 1.3;
+      }
+      
+      .authors {
+        margin: 0.5rem 0;
+        font-size: 0.95em;
+        
+        strong {
+          font-weight: 600;
+        }
+      }
+      
+      .venue {
+        margin: 0.5rem 0;
+        font-size: 0.9em;
+        color: #666;
+        
+        em {
+          font-style: italic;
+        }
+      }
+      
+      .links {
+        margin: 1rem 0;
+        
+        a {
+          color: var(--accent-color);
+          text-decoration: none;
+          margin-right: 0.5rem;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+      .description {
+        margin: 1rem 0 0 0;
+        line-height: 1.5;
+        color: #333;
+      }
+    }
+  }
+  
+  .other-projects {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin: 0.8rem 0;
+      padding-left: 1rem;
+      position: relative;
+      
+      &:before {
+        content: "•";
+        color: var(--accent-color);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  
+  // 响应式设计
+  @media (max-width: 768px) {
+    .publication {
+      flex-direction: column;
+      
+      .publication-teaser {
+        flex: none;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+// 学术链接样式
+.academic-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-color);
+  
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+  }
+}
+
+.author-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+// 侧边栏logo样式优化
+.sidebar .sidebar-sticky .sidebar-about .sidebar-nav-item img,
+.sidebar .sidebar-sticky .sidebar-about a img,
+.sidebar-about img {
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  
+  &:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+  }
+}
+
+// 更通用的logo样式
+.sidebar .sidebar-about .sidebar-nav-item:first-child img,
+.sidebar .sidebar-about > a:first-child img {
+  display: block !important;
+  margin: 0 auto 1rem auto !important;
+  width: 180px !important;
+  height: 180px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  
+  &:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+  }
+}
+
+// 侧边栏背景图位置调整
+.sidebar {
+  background-position: center center !important;  // 居中显示
+  background-size: cover !important;              // 覆盖整个侧边栏
+  background-repeat: no-repeat !important;        // 不重复
+}
+
+// 如果你想要更精确的位置控制，可以取消注释并使用以下选项之一：
+// .sidebar {
+//   background-position: center top !important;     // 水平居中，垂直顶部
+// }
+// .sidebar {
+//   background-position: center bottom !important;  // 水平居中，垂直底部  
+// }
+// .sidebar {
+//   background-position: left center !important;    // 水平左侧，垂直居中
+// }
+// .sidebar {
+//   background-position: right center !important;   // 水平右侧，垂直居中
+// }
+.sidebar {
+  background-position: 30% 80% !important;        // 自定义百分比位置（30%水平，50%垂直）
 }

@@ -2,34 +2,32 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
 author1:
-  name:              <firstname> <lastname>
-  email:             <mail@domain.tld>
+  name:              Sid Liang, Yi
+  email:             cidxbx@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    I am currently a Reinforcement Learning engineer at a Tactile sensor/ Dexterous hand / Humanoid robot startup.
     
-    Open `_data/authors.yml` to edit this text.
+    I got my bachelor's degree in Photoeletronic Science and Engineering from the Southwest University of Science and Technology, Sichuan, China.
 
   # This photo will be used in the about section
   picture:
-    path:            https://via.placeholder.com/128x128
+    path:            /assets/img/avatar.jpg
     # srcset is optional, but can be used to provide higher res versions for retina displays
-    srcset:
-      1x:            https://via.placeholder.com/128x128
-      2x:            https://via.placeholder.com/256x256
+    # srcset:
+    #   1x:            https://via.placeholder.com/128x128
+    #   2x:            https://via.placeholder.com/256x256
 
   # Social media icons in sidebar
   # Comment/uncommet to show/hide
   # Rearrange to change the order in which they appear
   # You can also provide an absolute URL (starting with https://) instead of usernames
   social:
-    twitter:         <username>
-    github:          <username>
-    # email:           <mail@domain.tld>
+    # twitter:         <username>
+    github:          https://github.com/cidxb
+    email:           cidxbx@gmail.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
@@ -58,7 +56,7 @@ author1:
     # npm:             <username>
     # hackernews:      <username>
     # trello:          <firstnamelastname>
-    # linkedin:        <firstname-lastname-string>
+    linkedin:        https://www.linkedin.com/in/yi-liang-2b570214a/
     # xing:            <firstname_lastname_counter>
     # blogger:         <number>
     # delicious:       <username>
