@@ -38,6 +38,9 @@ keywords:              []
 # It also used by the `jekyll-seo-tag` plugin.
 logo:                  /assets/img/avatar.jpg
 
+# Additional avatar configuration for GitHub Pages compatibility
+avatar:                /assets/img/avatar.jpg
+
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   name: Sid Liang, Yi
@@ -47,7 +50,10 @@ author:
     
     I got my bachelor's degree in Photoeletronic Science and Engineering from the Southwest University of Science and Technology, Sichuan, China.
   
-  picture: /assets/img/avatar.jpg
+  picture:
+    path: /assets/img/avatar.jpg
+    # Alternative format for GitHub Pages compatibility
+    src: /assets/img/avatar.jpg
   
   social:
     github: https://github.com/cidxb
