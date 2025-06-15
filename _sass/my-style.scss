@@ -237,3 +237,99 @@ section {
 .sidebar {
   background-position: 30% 80% !important;        // 自定义百分比位置（30%水平，50%垂直）
 }
+
+// Me section responsive styling
+#Me {
+  .me-section {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    margin: 20px 0;
+    
+    .me-content {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .me-image {
+      flex: 0 0 280px;
+      
+      img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      p {
+        font-size: 0.8em;
+        color: #666;
+        margin-top: 5px;
+        text-align: center;
+      }
+    }
+  }
+  
+  .me-image-left {
+    order: -1; // 在桌面端保持左侧位置
+    
+    img {
+      width: 60%; // 保持原有的60%宽度
+    }
+  }
+  
+  // 响应式断点
+  @media (max-width: 768px) {
+    .me-section {
+      flex-direction: column;
+      gap: 15px;
+      
+      .me-image {
+        flex: none;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+    
+    .me-image-left {
+      order: 0; // 移动端恢复正常顺序
+      
+      img {
+        width: 100%; // 移动端使用全宽
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .me-section {
+      .me-image {
+        max-width: 250px;
+      }
+    }
+  }
+  
+  // 超小屏幕 (< 320px)
+  @media (max-width: 319px) {
+    .me-section {
+      gap: 10px;
+      margin: 15px 0;
+      
+      .me-image {
+        max-width: 200px;
+      }
+    }
+  }
+  
+  // 小屏幕 (320px - 479px)
+  @media (min-width: 320px) and (max-width: 479px) {
+    .me-section .me-image {
+      max-width: 220px;
+    }
+  }
+  
+  // 中等屏幕 (480px - 767px)
+  @media (min-width: 480px) and (max-width: 767px) {
+    .me-section .me-image {
+      max-width: 280px;
+    }
+  }
+}
